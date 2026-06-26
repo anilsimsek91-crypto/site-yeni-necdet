@@ -13,18 +13,18 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-editorial gap-10 px-5 py-16 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8 lg:py-28">
         {/* Copy */}
         <div className="order-2 lg:order-1">
-          <p className="eyebrow">Ancient symbols · Modern legacy</p>
-          <h1 className="mt-5 font-serif text-4xl leading-[1.05] text-linen sm:text-5xl lg:text-6xl">
-            Rooted in the steppe.
+          <p className="eyebrow">Kadim iz · Modern duruş</p>
+          <h1 className="mt-6 font-serif text-5xl leading-[1.02] text-linen sm:text-6xl lg:text-7xl">
+            Bozkırdan doğdu,
             <br />
-            Worn by the future.
+            geleceğe taşındı.
           </h1>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-linen/60">
-            Premium menswear shaped by ancient Turkic symbols, steppe geometry
-            and modern restraint.
+          <p className="mt-7 max-w-md text-base leading-relaxed text-linen/60">
+            Kadim Türk sembolleri ve bozkır geometrisinden ilham alan, sade ve
+            rafine erkek giyim.
           </p>
-          <div className="mt-9">
-            <Button href="/products">Explore Collection</Button>
+          <div className="mt-10">
+            <Button href="/products">Koleksiyonu Keşfet</Button>
           </div>
         </div>
 
@@ -33,7 +33,7 @@ export default function Hero() {
           <div className="relative aspect-[4/5] overflow-hidden border border-bronze/25 sm:aspect-[3/4] lg:aspect-[4/5]">
             <Image
               src="https://images.unsplash.com/photo-1507680434567-5739c80be1ac?auto=format&fit=crop&w=1200&q=80"
-              alt="Böri premium menswear campaign — dark steppe atmosphere"
+              alt="iZ Studio premium erkek giyim kampanyası — karanlık bozkır atmosferi"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -3,6 +3,7 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WolfBackdrop from "@/components/WolfBackdrop";
 
 const sans = Inter({
   subsets: ["latin"],
@@ -18,9 +19,9 @@ const serif = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Böri — Ancient symbols. Modern legacy.",
+  title: "iZ Studio — Kadim iz, modern duruş.",
   description:
-    "Premium menswear shaped by ancient Turkic symbols, steppe geometry and modern restraint.",
+    "Bozkır geometrisi ve kadim Türk sembollerinden ilham alan, modern ve rafine erkek giyim.",
 };
 
 export default function RootLayout({
@@ -29,8 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
-      <body className="flex min-h-screen flex-col bg-void font-sans antialiased">
+    <html lang="tr" className={`${sans.variable} ${serif.variable}`}>
+      <body className="relative flex min-h-screen flex-col bg-void font-sans antialiased">
+        <WolfBackdrop />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

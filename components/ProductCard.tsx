@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import MotifFrame from "./MotifFrame";
 import { cn, formatPrice } from "@/lib/utils";
 
 export type ProductCardProps = {
@@ -11,12 +10,14 @@ export type ProductCardProps = {
   price?: number;
   image: string;
   variant?: "slider" | "grid";
+  featured?: boolean;
   className?: string;
 };
 
 /**
- * Product card used by both the homepage slider (variant="slider") and the
- * products grid (variant="grid"). The grid variant is intentionally cleaner.
+ * Premium fashion ürün kartı. Köşelerde kazınmış hissinde ince Türk
+ * geometrisi/tamga izleri taşır; bronz detay çok sınırlıdır.
+ * variant="slider" yatay galeride, variant="grid" ürün ızgarasında kullanılır.
  */
 export default function ProductCard({
   title,
@@ -26,6 +27,7 @@ export default function ProductCard({
   price,
   image,
   variant = "grid",
+  featured = false,
   className,
 }: ProductCardProps) {
   const isSlider = variant === "slider";
@@ -34,44 +36,72 @@ export default function ProductCard({
     <Link
       href={`/products/${slug}`}
       className={cn(
-        "group block",
-        isSlider && "w-[75vw] flex-shrink-0 snap-center sm:w-[340px]",
+        "group relative block",
+        isSlider && "snap-center",
+        isSlider &&
+          (featured
+            ? "w-[82vw] sm:w-[420px] lg:w-[460px]"
+            : "w-[72vw] sm:w-[340px] lg:w-[360px]"),
         className
       )}
     >
-      <MotifFrame
-        variant={isSlider ? "border" : "corner"}
-        className={cn(
-          "overflow-hidden bg-dark transition-colors duration-300",
-          isSlider && "border-bronze/30 group-hover:border-bronze/70"
-        )}
-      >
-        <div className="relative aspect-[4/5] overflow-hidden">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            sizes="(max-width: 640px) 75vw, 340px"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-void/70 via-transparent to-transparent" />
-        </div>
+      {/* Görsel */}
+      <div className="relative aspect-[3/4] overflow-hidden bg-dark">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes={isSlider ? "(max-width: 640px) 82vw, 440px" : "(max-width: 640px) 100vw, 360px"}
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-void/55 via-transparent to-transparent" />
 
-        <div className="flex items-end justify-between gap-3 px-4 py-4">
-          <div>
-            <p className="eyebrow">{collection ?? category}</p>
-            <h3 className="mt-1 font-serif text-lg leading-tight text-linen">
-              {title}
-            </h3>
-            {price !== undefined && (
-              <p className="mt-1 text-sm text-stone">{formatPrice(price)}</p>
-            )}
-          </div>
-          <span className="whitespace-nowrap text-[0.7rem] uppercase tracking-widest text-bronze opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            Explore →
-          </span>
+        {/* Kazınmış köşe motifleri */}
+        <CornerEtch className="left-3 top-3" />
+        <CornerEtch className="right-3 top-3 rotate-90" />
+        <CornerEtch className="bottom-3 left-3 -rotate-90" />
+        <CornerEtch className="bottom-3 right-3 rotate-180" />
+
+        {/* İnce çerçeve — hover'da hafif ısınır */}
+        <div className="pointer-events-none absolute inset-0 border border-linen/10 transition-colors duration-500 group-hover:border-bronze/40" />
+      </div>
+
+      {/* Metin */}
+      <div className="flex items-end justify-between gap-4 pt-4">
+        <div>
+          <p className="text-[0.65rem] uppercase tracking-[0.2em] text-linen/40">
+            {collection ?? category}
+          </p>
+          <h3 className="mt-1.5 font-serif text-xl leading-tight text-linen">
+            {title}
+          </h3>
+          {price !== undefined && (
+            <p className="mt-1.5 text-sm text-stone">{formatPrice(price)}</p>
+          )}
         </div>
-      </MotifFrame>
+        <span className="mb-1 whitespace-nowrap text-[0.65rem] uppercase tracking-[0.2em] text-linen/30 transition-colors duration-300 group-hover:text-bronze">
+          İncele →
+        </span>
+      </div>
     </Link>
+  );
+}
+
+/** Köşeye kazınmış ince çizgisel tamga izi. */
+function CornerEtch({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 28 28"
+      className={cn(
+        "pointer-events-none absolute z-10 h-5 w-5 text-bronze/50 transition-colors duration-500 group-hover:text-bronze",
+        className
+      )}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="0.75"
+    >
+      <path d="M2 10V2h8M2 2l7 7" />
+    </svg>
   );
 }

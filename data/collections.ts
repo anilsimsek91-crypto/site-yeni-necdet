@@ -7,23 +7,22 @@ export type Collection = {
 
 export const collections: Collection[] = [
   {
-    slug: "kipcak-origins",
-    name: "Kıpçak Origins",
-    tagline: "Steppe geometry, redrawn.",
+    slug: "kipcak-kokleri",
+    name: "Kıpçak Kökleri",
+    tagline: "Bozkır geometrisi, yeniden çizildi.",
     description:
-      "Forms traced from Kıpçak ornament, reduced to their quietest line.",
+      "Kıpçak süslemesinden alınan formlar, en sessiz çizgisine indirgendi.",
   },
   {
-    slug: "gokturk-legacy",
-    name: "Göktürk Legacy",
-    tagline: "The mark is quiet. The memory is not.",
-    description:
-      "Runic structure translated into restrained, modern silhouettes.",
+    slug: "gokturk-mirasi",
+    name: "Göktürk Mirası",
+    tagline: "İz sessizdir. Hafıza değil.",
+    description: "Runik yapı, sade ve modern silüetlere çevrildi.",
   },
   {
-    slug: "hun-dynasty",
-    name: "Hun Dynasty",
-    tagline: "Carved from memory. Built for today.",
-    description: "Bronze, stone and shadow — the weight of the early steppe.",
+    slug: "hun-cagi",
+    name: "Hun Çağı",
+    tagline: "Hafızadan kazındı. Bugün için kuruldu.",
+    description: "Bronz, taş ve gölge — erken bozkırın ağırlığı.",
   },
 ];

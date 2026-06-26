@@ -5,23 +5,23 @@ import Button from "@/components/Button";
 import { TamgaMark } from "@/components/MotifFrame";
 
 export const metadata: Metadata = {
-  title: "About — Böri",
+  title: "Hakkımızda — iZ Studio",
   description:
-    "Ancient Turkic visual memory translated into modern premium menswear.",
+    "Kadim Türk görsel hafızasını modern premium erkek giyime taşıyoruz.",
 };
 
 const philosophy = [
   {
-    title: "Material",
-    body: "Heavyweight cotton, weathered bronze, stone and linen tones. The material is chosen before the symbol.",
+    title: "Malzeme",
+    body: "Ağır gramajlı pamuk, eskitilmiş bronz, taş ve keten tonları. Malzeme, semboldan önce seçilir.",
   },
   {
-    title: "Mark",
-    body: "Tamga and runic forms reduced to a single line — placed once, never repeated for decoration.",
+    title: "İz",
+    body: "Tamga ve runik formlar tek bir çizgiye indirgenir — bir kez konur, süs için tekrarlanmaz.",
   },
   {
-    title: "Make",
-    body: "Limited production, considered fits, finished with restraint. Quiet luxury over loud heritage.",
+    title: "Üretim",
+    body: "Sınırlı üretim, özenli kalıplar, ölçülü bitişler. Gürültülü miras değil, sessiz lüks.",
   },
 ];
 
@@ -32,34 +32,32 @@ export default function AboutPage() {
       <section className="relative overflow-hidden border-b border-iron/60">
         <TamgaMark className="pointer-events-none absolute -right-16 top-0 h-[520px] w-[520px] text-bronze opacity-[0.05]" />
         <div className="relative mx-auto max-w-editorial px-5 py-20 lg:px-8 lg:py-32">
-          <p className="eyebrow">The manifesto</p>
-          <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-[1.1] text-linen sm:text-5xl lg:text-6xl">
-            Ancient Turkic visual memory, translated into modern premium
-            menswear.
+          <p className="eyebrow">Manifesto</p>
+          <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-[1.05] text-linen sm:text-6xl lg:text-7xl">
+            Kadim görsel hafıza, modern premium giyime taşındı.
           </h1>
           <p className="mt-8 max-w-xl text-base leading-relaxed text-linen/60">
-            Böri does not borrow history as costume. It treats the steppe — its
-            geometry, its marks, its materials — as structure beneath
-            contemporary clothing.
+            iZ Studio tarihi kostüm gibi ödünç almaz. Bozkırı — geometrisini,
+            izlerini, malzemesini — çağdaş giyimin altındaki yapı olarak görür.
           </p>
         </div>
       </section>
 
       {/* Origin story editorial */}
       <EditorialBlock
-        eyebrow="Origin"
-        heading="Carved from memory. Built for today."
-        body="The name Böri carries an old idea of the wolf — guidance across open land. We carry it forward not as a slogan, but as a way of designing: spare, deliberate, enduring."
+        eyebrow="Köken"
+        heading="Hafızadan kazındı. Bugün için kuruldu."
+        body="iZ Studio için ‘iz’ açık arazide yol gösteren kadim bir işarettir. Onu slogan olarak değil, bir tasarım dili olarak taşırız: sade, kararlı, kalıcı."
         image="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
-        imageAlt="Open steppe landscape under low light"
+        imageAlt="Alçak ışık altında açık bozkır manzarası"
       />
 
       {/* Philosophy */}
       <section className="bg-dark">
         <div className="mx-auto max-w-editorial px-5 py-16 lg:px-8 lg:py-24">
-          <p className="eyebrow">Production philosophy</p>
-          <h2 className="mt-3 max-w-xl font-serif text-3xl leading-tight text-linen sm:text-4xl">
-            Three principles, quietly held.
+          <p className="eyebrow">Üretim felsefesi</p>
+          <h2 className="mt-4 max-w-xl font-serif text-4xl leading-tight text-linen sm:text-5xl">
+            Sessizce tutulan üç ilke.
           </h2>
 
           <div className="mt-12 grid gap-10 md:grid-cols-3">
@@ -79,15 +77,15 @@ export default function AboutPage() {
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1504194104404-433180773017?auto=format&fit=crop&w=1600&q=80"
-          alt="Dark cinematic material study — stone and metal"
+          alt="Karanlık sinematik malzeme çalışması — taş ve metal"
           fill
           sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-void/50" />
         <div className="absolute inset-0 flex items-center justify-center px-5 text-center">
-          <p className="max-w-2xl font-serif text-2xl leading-snug text-linen sm:text-4xl">
-            The mark is quiet. The memory is not.
+          <p className="max-w-2xl font-serif text-3xl leading-snug text-linen sm:text-5xl">
+            İz sessizdir. Hafıza değil.
           </p>
         </div>
       </section>
@@ -95,11 +93,11 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="bg-void">
         <div className="mx-auto max-w-editorial px-5 py-20 text-center lg:px-8">
-          <h2 className="font-serif text-3xl text-linen sm:text-4xl">
-            Rooted in the steppe. Worn by the future.
+          <h2 className="font-serif text-4xl text-linen sm:text-5xl">
+            Bozkırdan doğdu, geleceğe taşındı.
           </h2>
           <div className="mt-9">
-            <Button href="/products">Explore the collection</Button>
+            <Button href="/products">Koleksiyonu keşfet</Button>
           </div>
         </div>
       </section>

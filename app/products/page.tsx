@@ -5,30 +5,21 @@ import ProductGrid from "@/components/ProductGrid";
 import { products, categories } from "@/data/products";
 import { cn } from "@/lib/utils";
 
-/** Map the plural filter labels to the singular category on each product. */
-const filterMap: Record<string, string | null> = {
-  All: null,
-  "T-Shirts": "T-Shirt",
-  Hoodies: "Hoodie",
-  Sweatshirts: "Sweatshirt",
-  Accessories: "Accessory",
-};
-
 export default function ProductsPage() {
-  const [active, setActive] = useState<string>("All");
+  const [active, setActive] = useState<string>("Tümü");
 
-  const category = filterMap[active];
-  const filtered = category
-    ? products.filter((p) => p.category === category)
-    : products;
+  const filtered =
+    active === "Tümü"
+      ? products
+      : products.filter((p) => p.category === active);
 
   return (
     <div className="bg-void">
       <div className="mx-auto max-w-editorial px-5 py-14 lg:px-8 lg:py-20">
-        <header className="mb-10">
-          <p className="eyebrow">The collection</p>
-          <h1 className="mt-3 font-serif text-4xl leading-tight text-linen sm:text-5xl">
-            Every piece, one memory.
+        <header className="mb-12">
+          <p className="eyebrow">Koleksiyon</p>
+          <h1 className="mt-4 font-serif text-5xl leading-[1.05] text-linen sm:text-6xl">
+            Her parça, bir iz.
           </h1>
         </header>
 
@@ -56,7 +47,7 @@ export default function ProductsPage() {
           <ProductGrid products={filtered} />
         ) : (
           <p className="py-20 text-center text-sm text-linen/50">
-            No pieces in this category yet.
+            Bu kategoride henüz parça yok.
           </p>
         )}
       </div>

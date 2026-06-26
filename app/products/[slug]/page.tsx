@@ -21,9 +21,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const product = getProductBySlug(slug);
-  if (!product) return { title: "Not found — Böri" };
+  if (!product) return { title: "Bulunamadı — iZ Studio" };
   return {
-    title: `${product.title} — Böri`,
+    title: `${product.title} — iZ Studio`,
     description: product.description,
   };
 }
@@ -47,8 +47,8 @@ export default async function ProductDetailPage({
 
         {/* Related products */}
         <section className="mt-24 border-t border-iron/60 pt-14">
-          <h2 className="mb-9 font-serif text-2xl text-linen sm:text-3xl">
-            Continue the collection
+          <h2 className="mb-9 font-serif text-3xl text-linen sm:text-4xl">
+            Koleksiyona devam et
           </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (

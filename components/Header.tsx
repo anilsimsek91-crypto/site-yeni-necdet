@@ -5,10 +5,10 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Collection", href: "/products" },
+  { label: "Koleksiyon", href: "/products" },
   { label: "Lookbook", href: "/products" },
-  { label: "About", href: "/about" },
-  { label: "Journal", href: "/about" },
+  { label: "Hakkımızda", href: "/about" },
+  { label: "Günce", href: "/about" },
 ];
 
 export default function Header() {
@@ -19,10 +19,10 @@ export default function Header() {
       <div className="mx-auto flex max-w-editorial items-center justify-between px-5 py-4 lg:px-8">
         <Link
           href="/"
-          className="font-serif text-2xl tracking-widest text-linen"
-          aria-label="Böri — home"
+          className="font-serif text-2xl tracking-[0.3em] text-linen"
+          aria-label="iZ Studio — ana sayfa"
         >
-          BÖRİ
+          iZ&nbsp;Studio
         </Link>
 
         {/* Desktop navigation */}
@@ -40,7 +40,7 @@ export default function Header() {
             href="/products"
             className="text-[0.7rem] uppercase tracking-widest text-linen/70 transition-colors hover:text-bronze"
           >
-            Cart (0)
+            Sepet (0)
           </Link>
         </nav>
 
@@ -50,14 +50,14 @@ export default function Header() {
             href="/products"
             className="text-[0.7rem] uppercase tracking-widest text-linen/70"
           >
-            Cart (0)
+            Sepet (0)
           </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
             className="flex h-6 w-7 flex-col justify-center gap-1.5"
           >
             <span

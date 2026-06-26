@@ -45,7 +45,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
         {/* Colors */}
         <fieldset className="mt-8">
-          <legend className="eyebrow">Color — {color}</legend>
+          <legend className="eyebrow">Renk — {color}</legend>
           <div className="mt-3 flex flex-wrap gap-3">
             {product.colors.map((c) => (
               <button
@@ -68,7 +68,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
         {/* Sizes */}
         <fieldset className="mt-7">
-          <legend className="eyebrow">Size — {size}</legend>
+          <legend className="eyebrow">Beden — {size}</legend>
           <div className="mt-3 flex flex-wrap gap-3">
             {product.sizes.map((s) => (
               <button
@@ -90,12 +90,12 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         </fieldset>
 
         <div className="mt-9">
-          <Button className="w-full sm:w-auto">Add to cart</Button>
+          <Button className="w-full sm:w-auto">Sepete ekle</Button>
         </div>
 
         {/* Material details */}
         <div className="mt-12 border-t border-iron/60 pt-8">
-          <h2 className="eyebrow">Material & make</h2>
+          <h2 className="eyebrow">Malzeme & üretim</h2>
           <ul className="mt-4 space-y-2 text-sm text-linen/60">
             {product.material.map((item) => (
               <li key={item} className="flex gap-3">
@@ -108,7 +108,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
         {/* Story */}
         <div className="mt-8 border-t border-iron/60 pt-8">
-          <h2 className="eyebrow">The mark</h2>
+          <h2 className="eyebrow">İz</h2>
           <p className="mt-4 max-w-md font-serif text-lg leading-relaxed text-linen/80">
             {product.story}
           </p>

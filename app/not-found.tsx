@@ -5,13 +5,13 @@ export default function NotFound() {
     <div className="flex min-h-[60vh] flex-col items-center justify-center px-5 text-center">
       <p className="eyebrow">404</p>
       <h1 className="mt-4 font-serif text-4xl text-linen sm:text-5xl">
-        This trail leads nowhere.
+        Bu iz bir yere çıkmıyor.
       </h1>
       <p className="mt-5 max-w-sm text-sm text-linen/60">
-        The page you are looking for has drifted off the steppe.
+        Aradığınız sayfa bozkırda kaybolmuş.
       </p>
       <div className="mt-9">
-        <Button href="/">Return home</Button>
+        <Button href="/">Ana sayfaya dön</Button>
       </div>
     </div>
   );

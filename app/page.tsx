@@ -14,18 +14,18 @@ export default function HomePage() {
       {/* Sliding product cards */}
       <section className="bg-void">
         <div className="mx-auto max-w-editorial px-5 py-16 lg:px-8 lg:py-24">
-          <div className="mb-9 flex items-end justify-between gap-6">
+          <div className="mb-10 flex items-end justify-between gap-6">
             <div>
-              <p className="eyebrow">Featured collection</p>
-              <h2 className="mt-3 max-w-lg font-serif text-3xl leading-tight text-linen sm:text-4xl">
-                A quiet lookbook of steppe geometry.
+              <p className="eyebrow">Öne çıkan koleksiyon</p>
+              <h2 className="mt-4 max-w-lg font-serif text-4xl leading-tight text-linen sm:text-5xl">
+                Bozkır geometrisinin sessiz lookbook'u.
               </h2>
             </div>
             <Link
               href="/products"
               className="hidden whitespace-nowrap text-[0.7rem] uppercase tracking-widest text-bronze hover:text-stone sm:block"
             >
-              View all →
+              Tümünü gör →
             </Link>
           </div>
 
@@ -35,29 +35,29 @@ export default function HomePage() {
 
       {/* Editorial */}
       <EditorialBlock
-        eyebrow="The material speaks"
-        heading="Not heritage as decoration. Heritage as structure."
-        body="Every line, border and mark is a quiet trace of steppe culture — never costume, never souvenir. A contemporary uniform for those who carry memory forward."
+        eyebrow="Malzeme konuşur"
+        heading="Miras süs değil. Miras yapıdır."
+        body="Her çizgi, her kenar, her iz bozkır kültürünün sessiz bir izidir — kostüm değil, hediyelik değil. Hafızayı geleceğe taşıyanlar için çağdaş bir form."
         image="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80"
-        imageAlt="Editorial menswear composition in stone and shadow"
-        cta={{ label: "Our story", href: "/about" }}
+        imageAlt="Taş ve gölge tonlarında editoryal erkek giyim kompozisyonu"
+        cta={{ label: "Hikâyemiz", href: "/about" }}
       />
 
       {/* Product preview grid */}
       <section className="bg-void">
         <div className="mx-auto max-w-editorial px-5 py-16 lg:px-8 lg:py-24">
-          <div className="mb-9">
-            <p className="eyebrow">The collection</p>
-            <h2 className="mt-3 font-serif text-3xl leading-tight text-linen sm:text-4xl">
-              Ancient marks. Modern presence.
+          <div className="mb-10">
+            <p className="eyebrow">Seçki</p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-linen sm:text-5xl">
+              Kadim izler. Modern duruş.
             </h2>
           </div>
 
-          <ProductGrid products={products.slice(0, 4)} />
+          <ProductGrid products={products.slice(0, 3)} />
 
-          <div className="mt-12 text-center">
+          <div className="mt-14 text-center">
             <Button href="/products" variant="outline">
-              Explore all products
+              Tüm ürünleri keşfet
             </Button>
           </div>
         </div>
@@ -67,12 +67,12 @@ export default function HomePage() {
       <EditorialBlock
         tone="stone"
         reverse
-        eyebrow="The mark is quiet"
-        heading="The mark is quiet. The memory is not."
-        body="Böri translates ancient Turkic visual memory into modern premium menswear — restrained silhouettes, weathered bronze, and symbols reduced to their truest line."
+        eyebrow="İz sessizdir"
+        heading="İz sessizdir. Hafıza değil."
+        body="iZ Studio, kadim Türk görsel hafızasını modern premium giyime taşır — sade silüetler, eskitilmiş bronz ve en yalın çizgisine indirgenmiş semboller."
         image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80"
-        imageAlt="Stone and linen material study"
-        cta={{ label: "Read the manifesto", href: "/about" }}
+        imageAlt="Taş ve keten malzeme çalışması"
+        cta={{ label: "Manifestoyu oku", href: "/about" }}
       />
     </>
   );

@@ -2,29 +2,29 @@ import Link from "next/link";
 
 const columns = [
   {
-    title: "Collection",
+    title: "Koleksiyon",
     links: [
-      { label: "All Products", href: "/products" },
-      { label: "Kıpçak Origins", href: "/products" },
-      { label: "Göktürk Legacy", href: "/products" },
-      { label: "Hun Dynasty", href: "/products" },
+      { label: "Tüm Ürünler", href: "/products" },
+      { label: "Kıpçak Kökleri", href: "/products" },
+      { label: "Göktürk Mirası", href: "/products" },
+      { label: "Hun Çağı", href: "/products" },
     ],
   },
   {
-    title: "Support",
+    title: "Destek",
     links: [
-      { label: "Shipping", href: "/about" },
-      { label: "Returns", href: "/about" },
-      { label: "Contact", href: "/about" },
-      { label: "Size Guide", href: "/about" },
+      { label: "Kargo", href: "/about" },
+      { label: "İade", href: "/about" },
+      { label: "İletişim", href: "/about" },
+      { label: "Beden Rehberi", href: "/about" },
     ],
   },
   {
-    title: "Social",
+    title: "Sosyal",
     links: [
       { label: "Instagram", href: "/about" },
       { label: "Pinterest", href: "/about" },
-      { label: "Journal", href: "/about" },
+      { label: "Günce", href: "/about" },
     ],
   },
 ];
@@ -35,9 +35,11 @@ export default function Footer() {
       <div className="mx-auto max-w-editorial px-5 py-16 lg:px-8">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
-            <p className="font-serif text-2xl tracking-widest text-linen">BÖRİ</p>
+            <p className="font-serif text-2xl tracking-[0.3em] text-linen">
+              iZ&nbsp;Studio
+            </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-linen/50">
-              Ancient symbols. Modern legacy.
+              Kadim iz, modern duruş.
             </p>
           </div>
 
@@ -61,8 +63,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-2 border-t border-iron/60 pt-6 text-xs text-linen/40 sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} Böri. All rights reserved.</p>
-          <p>Rooted in the steppe. Worn by the future.</p>
+          <p>© {new Date().getFullYear()} iZ Studio. Tüm hakları saklıdır.</p>
+          <p>Bozkırdan doğdu, geleceğe taşındı.</p>
         </div>
       </div>
     </footer>
