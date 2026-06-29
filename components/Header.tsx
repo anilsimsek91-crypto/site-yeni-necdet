@@ -2,27 +2,29 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Koleksiyon", href: "/products" },
-  { label: "Lookbook", href: "/products" },
   { label: "Hakkımızda", href: "/about" },
-  { label: "Günce", href: "/about" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-iron/60 bg-void/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-void/15 bg-cream/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-editorial items-center justify-between px-5 py-4 lg:px-8">
-        <Link
-          href="/"
-          className="font-serif text-2xl tracking-[0.3em] text-linen"
-          aria-label="iZ Studio — ana sayfa"
-        >
-          iZ&nbsp;Studio
+        <Link href="/" aria-label="iZ Studio — ana sayfa" className="inline-flex">
+          <Image
+            src="/images/iz-studio-logo.png"
+            alt="iZ Studio"
+            width={533}
+            height={166}
+            priority
+            className="h-11 w-auto sm:h-12 lg:h-14"
+          />
         </Link>
 
         {/* Desktop navigation */}
@@ -31,14 +33,14 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[0.7rem] uppercase tracking-widest text-linen/70 transition-colors hover:text-bronze"
+              className="text-[0.7rem] uppercase tracking-widest text-void/70 transition-colors hover:text-bronze"
             >
               {item.label}
             </Link>
           ))}
           <Link
             href="/products"
-            className="text-[0.7rem] uppercase tracking-widest text-linen/70 transition-colors hover:text-bronze"
+            className="text-[0.7rem] uppercase tracking-widest text-void/70 transition-colors hover:text-bronze"
           >
             Sepet (0)
           </Link>
@@ -48,7 +50,7 @@ export default function Header() {
         <div className="flex items-center gap-5 md:hidden">
           <Link
             href="/products"
-            className="text-[0.7rem] uppercase tracking-widest text-linen/70"
+            className="text-[0.7rem] uppercase tracking-widest text-void/70"
           >
             Sepet (0)
           </Link>
@@ -62,13 +64,13 @@ export default function Header() {
           >
             <span
               className={cn(
-                "h-px w-full bg-linen transition-transform",
+                "h-px w-full bg-void transition-transform",
                 open && "translate-y-[3.5px] rotate-45"
               )}
             />
             <span
               className={cn(
-                "h-px w-full bg-linen transition-transform",
+                "h-px w-full bg-void transition-transform",
                 open && "-translate-y-[3.5px] -rotate-45"
               )}
             />
@@ -81,7 +83,7 @@ export default function Header() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
-          className="border-t border-iron/60 bg-void px-5 py-4 md:hidden"
+          className="border-t border-void/15 bg-cream px-5 py-4 md:hidden"
         >
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => (
@@ -89,7 +91,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-sm uppercase tracking-widest text-linen/80 hover:text-bronze"
+                  className="block py-2 text-sm uppercase tracking-widest text-void/80 hover:text-bronze"
                 >
                   {item.label}
                 </Link>

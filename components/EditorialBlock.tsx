@@ -27,7 +27,7 @@ export default function EditorialBlock({
   return (
     <section
       className={cn(
-        tone === "stone" ? "bg-stone text-void" : "bg-dark text-linen"
+        tone === "stone" ? "bg-stone text-void" : "bg-parchment text-void"
       )}
     >
       <div
@@ -51,7 +51,7 @@ export default function EditorialBlock({
           <h2
             className={cn(
               "mt-4 font-serif text-3xl leading-tight sm:text-4xl",
-              tone === "stone" ? "text-void" : "text-linen"
+              tone === "stone" ? "text-void" : "text-void"
             )}
           >
             {heading}
@@ -60,7 +60,7 @@ export default function EditorialBlock({
             <p
               className={cn(
                 "mt-5 max-w-md text-base leading-relaxed",
-                tone === "stone" ? "text-void/70" : "text-linen/60"
+                tone === "stone" ? "text-void/70" : "text-void/60"
               )}
             >
               {body}

@@ -46,7 +46,7 @@ export default function ProductCard({
       )}
     >
       {/* Görsel */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-dark">
+      <div className="relative aspect-[3/4] overflow-hidden bg-parchment">
         <Image
           src={image}
           alt={title}
@@ -63,23 +63,23 @@ export default function ProductCard({
         <CornerEtch className="bottom-3 right-3 rotate-180" />
 
         {/* İnce çerçeve — hover'da hafif ısınır */}
-        <div className="pointer-events-none absolute inset-0 border border-linen/10 transition-colors duration-500 group-hover:border-bronze/40" />
+        <div className="pointer-events-none absolute inset-0 border border-void/10 transition-colors duration-500 group-hover:border-bronze/40" />
       </div>
 
       {/* Metin */}
       <div className="flex items-end justify-between gap-4 pt-4">
         <div>
-          <p className="text-[0.65rem] uppercase tracking-[0.2em] text-linen/40">
+          <p className="text-[0.65rem] uppercase tracking-[0.2em] text-void/40">
             {collection ?? category}
           </p>
-          <h3 className="mt-1.5 font-serif text-xl leading-tight text-linen">
+          <h3 className="mt-1.5 font-serif text-xl leading-tight text-void">
             {title}
           </h3>
           {price !== undefined && (
-            <p className="mt-1.5 text-sm text-stone">{formatPrice(price)}</p>
+            <p className="mt-1.5 text-sm text-bronze">{formatPrice(price)}</p>
           )}
         </div>
-        <span className="mb-1 whitespace-nowrap text-[0.65rem] uppercase tracking-[0.2em] text-linen/30 transition-colors duration-300 group-hover:text-bronze">
+        <span className="mb-1 whitespace-nowrap text-[0.65rem] uppercase tracking-[0.2em] text-void/30 transition-colors duration-300 group-hover:text-bronze">
           İncele →
         </span>
       </div>

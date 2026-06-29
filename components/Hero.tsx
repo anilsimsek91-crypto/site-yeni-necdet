@@ -4,7 +4,7 @@ import { TamgaMark } from "./MotifFrame";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-iron/60 bg-void">
+    <section className="relative overflow-hidden border-b border-void/15 bg-cream">
       <div className="steppe-texture absolute inset-0 opacity-60" aria-hidden="true" />
       <TamgaMark
         className="pointer-events-none absolute -left-10 top-1/2 hidden h-[640px] w-[640px] -translate-y-1/2 text-bronze opacity-[0.04] lg:block"
@@ -14,12 +14,12 @@ export default function Hero() {
         {/* Copy */}
         <div className="order-2 lg:order-1">
           <p className="eyebrow">Kadim iz · Modern duruş</p>
-          <h1 className="mt-6 font-serif text-5xl leading-[1.02] text-linen sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 font-serif text-5xl leading-[1.02] text-void sm:text-6xl lg:text-7xl">
             Bozkırdan doğdu,
             <br />
             geleceğe taşındı.
           </h1>
-          <p className="mt-7 max-w-md text-base leading-relaxed text-linen/60">
+          <p className="mt-7 max-w-md text-base leading-relaxed text-void/60">
             Kadim Türk sembolleri ve bozkır geometrisinden ilham alan, sade ve
             rafine erkek giyim.
           </p>

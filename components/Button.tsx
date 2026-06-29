@@ -25,9 +25,9 @@ const base =
   "inline-flex items-center justify-center px-7 py-3 text-[0.7rem] uppercase tracking-widest transition-colors duration-200 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-bronze";
 
 const variants = {
-  solid: "bg-linen text-void hover:bg-sand",
+  solid: "bg-void text-cream hover:bg-iron",
   outline:
-    "border border-bronze/50 text-linen hover:border-bronze hover:bg-bronze/10",
+    "border border-bronze/50 text-void hover:border-bronze hover:bg-bronze/10",
 };
 
 export default function Button(props: ButtonProps) {

@@ -1,35 +1,37 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import ProductSlider from "@/components/ProductSlider";
+import FeaturedSlider from "@/components/FeaturedSlider";
 import ProductGrid from "@/components/ProductGrid";
 import EditorialBlock from "@/components/EditorialBlock";
 import Button from "@/components/Button";
-import { products } from "@/data/products";
+import { getProducts } from "@/lib/products";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const products = await getProducts();
+
   return (
     <>
       <Hero />
 
       {/* Sliding product cards */}
-      <section className="bg-void">
+      <section className="bg-cream">
         <div className="mx-auto max-w-editorial px-5 py-16 lg:px-8 lg:py-24">
           <div className="mb-10 flex items-end justify-between gap-6">
             <div>
               <p className="eyebrow">Öne çıkan koleksiyon</p>
-              <h2 className="mt-4 max-w-lg font-serif text-4xl leading-tight text-linen sm:text-5xl">
+              <h2 className="mt-4 max-w-lg font-serif text-4xl leading-tight text-void sm:text-5xl">
                 Bozkır geometrisinin sessiz lookbook'u.
               </h2>
             </div>
             <Link
               href="/products"
-              className="hidden whitespace-nowrap text-[0.7rem] uppercase tracking-widest text-bronze hover:text-stone sm:block"
+              className="hidden whitespace-nowrap text-[0.7rem] uppercase tracking-widest text-bronze hover:text-bronze sm:block"
             >
               Tümünü gör →
             </Link>
           </div>
 
-          <ProductSlider products={products.slice(0, 6)} />
+          <FeaturedSlider products={products} max={8} />
         </div>
       </section>
 
@@ -44,11 +46,11 @@ export default function HomePage() {
       />
 
       {/* Product preview grid */}
-      <section className="bg-void">
+      <section className="bg-cream">
         <div className="mx-auto max-w-editorial px-5 py-16 lg:px-8 lg:py-24">
           <div className="mb-10">
             <p className="eyebrow">Seçki</p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-linen sm:text-5xl">
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-void sm:text-5xl">
               Kadim izler. Modern duruş.
             </h2>
           </div>

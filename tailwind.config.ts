@@ -11,6 +11,8 @@ const config: Config = {
         void: "#0E0E0E",
         dark: "#151412",
         iron: "#282725",
+        cream: "#F2ECDA",
+        parchment: "#E7DEC6",
         stone: "#C8B49A",
         sand: "#D8C8A9",
         linen: "#E5E1D6",

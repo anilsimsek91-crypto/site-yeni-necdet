@@ -11,6 +11,8 @@ export type Product = {
   material: string[];
   story: string;
   motif?: string;
+  /** Shopier satın alma bağlantısı (admin panelinden eklenir). */
+  shopierUrl?: string;
 };
 
 export const products: Product[] = [

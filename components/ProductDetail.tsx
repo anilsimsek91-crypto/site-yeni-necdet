@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Button from "./Button";
 import MotifFrame from "./MotifFrame";
 import { cn, formatPrice } from "@/lib/utils";
 import type { Product } from "@/data/products";
@@ -19,7 +18,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
     <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
       {/* Image — first on mobile, left on desktop */}
       <MotifFrame variant="corner" className="self-start">
-        <div className="relative aspect-[4/5] overflow-hidden border border-bronze/25 bg-dark">
+        <div className="relative aspect-[4/5] overflow-hidden border border-bronze/25 bg-parchment">
           <Image
             src={product.image}
             alt={product.title}
@@ -34,12 +33,12 @@ export default function ProductDetail({ product }: ProductDetailProps) {
       {/* Info — sticky on desktop */}
       <div className="lg:sticky lg:top-28 lg:self-start">
         <p className="eyebrow">{product.collection}</p>
-        <h1 className="mt-3 font-serif text-3xl leading-tight text-linen sm:text-4xl">
+        <h1 className="mt-3 font-serif text-3xl leading-tight text-void sm:text-4xl">
           {product.title}
         </h1>
-        <p className="mt-4 text-xl text-stone">{formatPrice(product.price)}</p>
+        <p className="mt-4 text-xl text-bronze">{formatPrice(product.price)}</p>
 
-        <p className="mt-6 max-w-md text-sm leading-relaxed text-linen/60">
+        <p className="mt-6 max-w-md text-sm leading-relaxed text-void/60">
           {product.description}
         </p>
 
@@ -56,8 +55,8 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 className={cn(
                   "border px-4 py-2 text-xs uppercase tracking-widest transition-colors",
                   color === c
-                    ? "border-bronze bg-bronze/15 text-linen"
-                    : "border-iron text-linen/60 hover:border-bronze/50"
+                    ? "border-bronze bg-bronze/15 text-void"
+                    : "border-void/20 text-void/60 hover:border-bronze/50"
                 )}
               >
                 {c}
@@ -79,8 +78,8 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 className={cn(
                   "min-w-[3rem] border px-4 py-2 text-xs uppercase tracking-widest transition-colors",
                   size === s
-                    ? "border-bronze bg-bronze/15 text-linen"
-                    : "border-iron text-linen/60 hover:border-bronze/50"
+                    ? "border-bronze bg-bronze/15 text-void"
+                    : "border-void/20 text-void/60 hover:border-bronze/50"
                 )}
               >
                 {s}
@@ -90,13 +89,26 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         </fieldset>
 
         <div className="mt-9">
-          <Button className="w-full sm:w-auto">Sepete ekle</Button>
+          {product.shopierUrl ? (
+            <a
+              href={product.shopierUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center bg-void px-7 py-3 text-[0.7rem] uppercase tracking-widest text-cream transition-colors duration-200 hover:bg-iron focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-bronze sm:w-auto"
+            >
+              Satın al
+            </a>
+          ) : (
+            <span className="inline-flex w-full cursor-not-allowed items-center justify-center border border-void/20 px-7 py-3 text-[0.7rem] uppercase tracking-widest text-void/40 sm:w-auto">
+              Yakında
+            </span>
+          )}
         </div>
 
         {/* Material details */}
-        <div className="mt-12 border-t border-iron/60 pt-8">
+        <div className="mt-12 border-t border-void/15 pt-8">
           <h2 className="eyebrow">Malzeme & üretim</h2>
-          <ul className="mt-4 space-y-2 text-sm text-linen/60">
+          <ul className="mt-4 space-y-2 text-sm text-void/60">
             {product.material.map((item) => (
               <li key={item} className="flex gap-3">
                 <span className="text-bronze">—</span>
@@ -107,9 +119,9 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         </div>
 
         {/* Story */}
-        <div className="mt-8 border-t border-iron/60 pt-8">
+        <div className="mt-8 border-t border-void/15 pt-8">
           <h2 className="eyebrow">İz</h2>
-          <p className="mt-4 max-w-md font-serif text-lg leading-relaxed text-linen/80">
+          <p className="mt-4 max-w-md font-serif text-lg leading-relaxed text-void/80">
             {product.story}
           </p>
         </div>
